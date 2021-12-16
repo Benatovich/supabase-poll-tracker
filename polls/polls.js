@@ -25,41 +25,118 @@ const optionBTitleEl = document.getElementById('option-b-title');
 const optionAVotesEl = document.getElementById('option-a-votes');
 const optionBVotesEl = document.getElementById('option-b-votes');
 
-let question = '';
-let optionATitle = '';
-let optionBTitle = '';
-let optionAVotes = 0;
-let optionBVotes = 0;
+checkAuth();
 
-optionAAddButton.addEventListener('click', () => {
-    optionAVotes++;
-
-    optionAVotesEl.textContent = optionAVotes;
-});
-optionBAddButton.addEventListener('click', () => {
-    optionBVotes++;
-
-    optionBVotesEl.textContent = optionBVotes;
-});
-optionAUndoButton.addEventListener('click', () => {
-    optionAVotes--;
-
-    optionAVotesEl.textContent = optionAVotes;
-});
-optionBUndoButton.addEventListener('click', () => {
-    optionBVotes--;
-
-    optionBVotesEl.textContent = optionAVotes;
-});
+let currentPoll = {
+    question: '',
+    optionATitle: '',
+    optionBTitle: '',
+    optionAVotes: 0,
+    optionBVotes: 0,
+};
 
 pollForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const data = new FormData(pollForm);
+    const question = data.get('booger-question');
+    const optionATitle = data.get('booger-option-a');
+    const optionBTitle = data.get('booger-option-b');
 
-    question = data.get('booger-question');
-    optionATitle = data.get('booger-option-a');
-    optionBTitle = data.get('booger-option-b');
+    currentPoll.question = question;
+    currentPoll.optionATitle = optionATitle;
+    currentPoll.optionBTitle = optionBTitle;
+
+    pollForm.reset();
 
     displayCurrentPollEl();
 });
+
+optionAAddButton.addEventListener('click', () => {
+    currentPoll.optionAVotes++;
+    displayCurrentPollEl();
+});
+optionBAddButton.addEventListener('click', () => {
+    currentPoll.optionBVotes++;
+    displayCurrentPollEl();
+});
+optionAUndoButton.addEventListener('click', () => {
+    currentPoll.optionAVotes--;
+    displayCurrentPollEl();
+});
+optionBUndoButton.addEventListener('click', () => {
+    currentPoll.optionBVotes--;
+    displayCurrentPollEl();
+});
+
+
+closePollButton.addEventListener('click', async() => {
+    await createPoll(currentPoll);
+    const allPolls = await getPolls();
+
+    pastPollsEl.textContent = '';
+    for (let poll of allPolls) {
+        const pastPolls = renderPoll(poll);
+        pastPollsEl.append(pastPolls);
+    }
+    displayAllPolls();
+
+    currentPoll = {
+        question: '',
+        optionATitle: '',
+        optionBTitle: '',
+        optionAVotes: 0,
+        optionBVotes: 0,
+    };
+
+    displayCurrentPollEl();
+});
+
+logoutButton.addEventListener('click', () => {
+    logout();
+});
+
+window.addEventListener('load', async() => {
+    // do I need this...?
+});
+
+// function displayCurrentPollEl() {
+//     currentPollEl.textContent = '';
+//     questionEl.textContent = question;
+//     optionATitleEl.textContent = optionATitle;
+//     optionBTitleEl.textContent = optionBTitle;
+//     optionAVotesEl.textContent = optionAVotes;
+//     optionBVotesEl.textContent = optionBVotes;
+
+//     const pollEl = renderPoll(currentPoll);
+//     pollEl.classList.add('current');
+
+//     currentPollEl.append(pollEl);
+// }
+function displayCurrentPollEl() {
+    currentPollEl.textContent = '';
+    questionEl.textContent = currentPoll.question;
+    optionATitleEl.textContent = currentPoll.optionATitle;
+    optionBTitleEl.textContent = currentPoll.optionBTitle;
+    optionAVotesEl.textContent = currentPoll.optionAVotes;
+    optionBVotesEl.textContent = currentPoll.optionBVotes;
+
+    const pollEl = renderPoll(currentPoll);
+    pollEl.classList.add('current');
+
+    currentPollEl.append(pollEl);
+}
+
+async function displayAllPolls() {
+    pastPollsEl.textContent = '';
+    const pastPolls = await getPolls();
+    console.log(pastPolls);
+    for (let poll of pastPolls) {
+        const pollEl = renderPoll(poll);
+        pollEl.classList.add('past');
+        pastPollsEl.append(pollEl);
+    }
+}
+
+displayAllPolls();
+displayCurrentPollEl();
