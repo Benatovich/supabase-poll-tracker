@@ -118,8 +118,8 @@ function displayCurrentPollEl() {
     questionEl.textContent = currentPoll.question;
     optionATitleEl.textContent = currentPoll.optionATitle;
     optionBTitleEl.textContent = currentPoll.optionBTitle;
-    optionAVotesEl.textContent = currentPoll.optionAVotes;
-    optionBVotesEl.textContent = currentPoll.optionBVotes;
+    // optionAVotesEl.textContent = currentPoll.optionAVotes;
+    // optionBVotesEl.textContent = currentPoll.optionBVotes;
 
     const pollEl = renderPoll(currentPoll);
     pollEl.classList.add('current');
@@ -130,7 +130,7 @@ function displayCurrentPollEl() {
 async function displayAllPolls() {
     pastPollsEl.textContent = '';
     const pastPolls = await getPolls();
-    console.log(pastPolls);
+    // console.log(pastPolls);
     for (let poll of pastPolls) {
         const pollEl = renderPoll(poll);
         pollEl.classList.add('past');

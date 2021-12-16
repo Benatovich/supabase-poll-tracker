@@ -16,7 +16,7 @@ redirectToPolls();
 
 signUpForm.addEventListener('submit', async(event)=>{
     event.preventDefault();
-    const user = await signUpUser(signUpEmail.ariaValueMax, signUpPassword.value);
+    const user = await signUpUser(signUpEmail.value, signUpPassword.value);
 
     if (user){
         redirectToPolls();

@@ -40,7 +40,7 @@ export async function redirectToPolls() {
 }
 
 export async function signUpUser(email, password){
-    const response = await client.auth.signup({ email, password });
+    const response = await client.auth.signUp({ email, password });
 
     return response.user;
 }
