@@ -6,18 +6,17 @@ import {
 } from '../fetch-utils.js';
 import { renderPoll } from '../render-utils.js';
 
-const pollForm = document.getElementById('poll-form');
-
 const currentPollEl = document.getElementById('current-poll-container');
 const pastPollsEl = document.getElementById('past-polls-container');
 const logoutButton = document.getElementById('logout');
 
+const pollForm = document.getElementById('poll-form');
 const optionAAddButton = document.getElementById('option-a-add-button');
 const optionBAddButton = document.getElementById('option-b-add-button');
 const optionAUndoButton = document.getElementById('option-a-undo-button');
 const optionBUndoButton = document.getElementById('option-b-undo-button');
-
 const closePollButton = document.getElementById('close-poll-button');
+
 const questionEl = document.getElementById('poll-question');
 
 const optionATitleEl = document.getElementById('option-a-title');
@@ -118,8 +117,8 @@ function displayCurrentPollEl() {
     questionEl.textContent = currentPoll.question;
     optionATitleEl.textContent = currentPoll.optionATitle;
     optionBTitleEl.textContent = currentPoll.optionBTitle;
-    // optionAVotesEl.textContent = currentPoll.optionAVotes;
-    // optionBVotesEl.textContent = currentPoll.optionBVotes;
+    optionAVotesEl.textContent = currentPoll.optionAVotes;
+    optionBVotesEl.textContent = currentPoll.optionBVotes;
 
     const pollEl = renderPoll(currentPoll);
     pollEl.classList.add('current');

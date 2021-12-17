@@ -17,8 +17,12 @@
     <main>
         <button id="logout">Logout</button>
         <section class="main-section">
-            <div class="top">
-                <div class="left">
+            <div class="left">
+                <h2>Current Poll</h2>
+                <div id="current-poll-container">
+                    
+                </div>
+                <div class="form-and-buttons">
                     <form id="poll-form">
                         <label>
                             Question
@@ -36,43 +40,42 @@
                         <button>Start Poll</button>
                     </form>
 
-                    <div class="vote-change-buttons">
-                        <div>
-                            <div>
-                                <button id="option-a-add-button">Vote Option A</button>
-                                <button id="option-b-add-button">Vote Option B</button>
+                    <div class="buttons">
+                        <div class="top-buttons">
+                            <h3 id="poll-question">Poll Question</h3>
+                            <div class="left-buttons">
+                                <h3 id="option-a-title">Option A</h3>
+                                <button id="option-a-add-button">
+                                    Add
+                                </button>
+                                <button id="option-a-undo-button">
+                                    Undo
+                                </button>
                             </div>
-                            <div>
-                                <button id="option-a-undo-button">Undo Option A</button>
-                                <button id="option-b-undo-button">Undo Option B</button>
+                            <div class="right-buttons">
+                                <h3 id="option-b-title">Option B</h3>
+                                <button id="option-b-add-button">
+                                    Add
+                                </button>
+                                <button id="option-b-undo-button">
+                                    Undo
+                                </button>
                             </div>
                         </div>
-                        <button id="close-poll-button">Close Poll</button>
+                        <hr>
+                        <div class="bottom-buttons">
+                            <button id="close-poll-button">
+                                Close Poll
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="right">
-                    <p>Current Poll</p>
-                    <div id="current-poll-container"></div>
-                        <p id="poll-question"></p>
-                        <div class="options">
-                            <div id="option-a">
-                                <p id="option-a-title"></p>
-                                <p id="option-a-votes"></p>
-                            </div>
-                            <div id="option-b">
-                                <p id="option-b-title"></p>
-                                <p id="option-b-votes"></p>
-                            </div>
-                        </div>
+                    <div>
+                        <h2>Past Polls</h2>
+                    </div>
+                    <div id="past-polls-container"></div>
                 </div>
-            </div>
-            
-            <div class="bottom">
-                <h3>Past Polls</h3>
-                <div id="past-polls-container">
-                
-                </div>
-            </div>
 
         </section>
     </main>
