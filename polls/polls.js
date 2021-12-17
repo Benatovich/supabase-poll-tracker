@@ -102,16 +102,16 @@ window.addEventListener('load', async() => {
 
 function displayCurrentPollEl() {
     currentPollEl.textContent = '';
-    questionEl.textContent = currentPoll.question;
-    optionATitleEl.textContent = currentPoll.optionATitle;
-    optionBTitleEl.textContent = currentPoll.optionBTitle;
-    optionAVotesEl.textContent = currentPoll.optionAVotes;
-    optionBVotesEl.textContent = currentPoll.optionBVotes;
+    // questionEl.textContent = currentPoll.question;
+    // optionATitleEl.textContent = currentPoll.optionATitle;
+    // optionBTitleEl.textContent = currentPoll.optionBTitle;
+    // optionAVotesEl.textContent = currentPoll.optionAVotes;
+    // optionBVotesEl.textContent = currentPoll.optionBVotes;
 
-    // const pollEl = renderPoll(currentPoll);
-    // pollEl.classList.add('current');
+    const pollEl = renderPoll(currentPoll);
+    pollEl.classList.add('current');
 
-    // currentPollEl.append(pollEl);
+    currentPollEl.append(pollEl);
 }
 
 async function displayAllPolls() {
@@ -126,4 +126,4 @@ async function displayAllPolls() {
 }
 
 displayAllPolls();
-// displayCurrentPollEl();
+displayCurrentPollEl();
