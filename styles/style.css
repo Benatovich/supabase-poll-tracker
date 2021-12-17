@@ -96,9 +96,23 @@ p {
     border: solid 1px black;
     text-align: center;
     display: flex;
-    width: 250px;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
     justify-content: center;
     background-color: beige;
+}
+
+.question {
+    margin: 0;
+    padding: 0;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .team {
@@ -110,10 +124,12 @@ p {
     font-size: 1.3rem;
     border-bottom: solid 2px black;
     text-overflow: ellipsis;
+    margin-bottom: 0;
 }
 
 .poll .votes {
     font-size: 1.3rem;
+    margin-bottom: 0;
 }
 
 .buttons {

@@ -3,10 +3,14 @@ export function renderPoll(poll) {
     const questionEl = document.createElement('p');
     const optionADiv = renderOption(poll.optionATitle, poll.optionAVotes);
     const optionBDiv = renderOption(poll.optionBTitle, poll.optionBVotes);
-
+    const optionContainer = document.createElement('div');
+    
     container.classList.add('poll');
+    optionContainer.classList.add('options');
+    questionEl.classList.add('question');
     questionEl.textContent = poll.question;
-    container.append(questionEl, optionADiv, optionBDiv);
+    optionContainer.append(optionADiv, optionBDiv);
+    container.append(questionEl, optionContainer);
 
     return container;
 }
