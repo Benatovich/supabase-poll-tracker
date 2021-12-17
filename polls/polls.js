@@ -17,12 +17,12 @@ const optionAUndoButton = document.getElementById('option-a-undo-button');
 const optionBUndoButton = document.getElementById('option-b-undo-button');
 const closePollButton = document.getElementById('close-poll-button');
 
-const questionEl = document.getElementById('poll-question');
+// const questionEl = document.getElementById('poll-question');
 
 const optionATitleEl = document.getElementById('option-a-title');
 const optionBTitleEl = document.getElementById('option-b-title');
-const optionAVotesEl = document.getElementById('option-a-votes');
-const optionBVotesEl = document.getElementById('option-b-votes');
+// const optionAVotesEl = document.getElementById('option-a-votes');
+// const optionBVotesEl = document.getElementById('option-b-votes');
 
 checkAuth();
 
