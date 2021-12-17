@@ -1,16 +1,16 @@
 // IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { renderPoll } from '../render-utils.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('renderPoll(poll) should render a poll', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = true;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = renderPoll(poll);
 
     //Expect
     // Make assertions about what is expected versus the actual result
