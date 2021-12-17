@@ -99,19 +99,7 @@ window.addEventListener('load', async() => {
     // do I need this...?
 });
 
-// function displayCurrentPollEl() {
-//     currentPollEl.textContent = '';
-//     questionEl.textContent = question;
-//     optionATitleEl.textContent = optionATitle;
-//     optionBTitleEl.textContent = optionBTitle;
-//     optionAVotesEl.textContent = optionAVotes;
-//     optionBVotesEl.textContent = optionBVotes;
 
-//     const pollEl = renderPoll(currentPoll);
-//     pollEl.classList.add('current');
-
-//     currentPollEl.append(pollEl);
-// }
 function displayCurrentPollEl() {
     currentPollEl.textContent = '';
     questionEl.textContent = currentPoll.question;
