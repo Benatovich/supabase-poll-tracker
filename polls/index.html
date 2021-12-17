@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <button id="logout">Logout</button>
+        <section class="main-section">
+            <div class="left">
+                <h2>Current Poll</h2>
+                <div id="current-poll-container"></div>
+                <div class="form-and-buttons">
+                    <form class="poll-form" id="poll-form">
+                        <label>
+                            Question
+                            <input name="booger-question" />
+                        </label>
+                        <label>
+                            Option A
+                            <input name="booger-option-a" />
+                        </label>
+                        <label>
+                            Option B
+                            <input name="booger-option-b" />
+                        </label>
+                        <button>Start Poll</button>
+                    </form>
+
+                    <div class="buttons">
+                        <div class="top-buttons">
+                            <!-- <h3 id="poll-question">Poll Question</h3> -->
+                            <div class="left-buttons">
+                                <h3 id="option-a-title"></h3>
+                                <!-- <h3 id="option-a-votes"></h3> -->
+                                <button id="option-a-add-button">
+                                    Add
+                                </button>
+                                <button id="option-a-undo-button">
+                                    Undo
+                                </button>
+                            </div>
+                            <div class="right-buttons">
+                                <h3 id="option-b-title"></h3>
+                                <!-- <h3 id="option-b-votes"></h3> -->
+                                <button id="option-b-add-button">
+                                    Add
+                                </button>
+                                <button id="option-b-undo-button">
+                                    Undo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bottom-buttons">
+                            <button id="close-poll-button">
+                                Close Poll
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <h2>Past Polls</h2>
+                </div>
+                <div id="past-polls-container"></div>
+            </div>
+
+        </section>
+    </main>
+
+    <script type="module" src="./polls.js"></script>
+</body>
+
+</html>
