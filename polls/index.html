@@ -18,8 +18,10 @@
         <button id="logout">Logout</button>
         <section class="main-section">
             <div class="left">
+                <h2>Current Poll</h2>
+                <div id="current-poll-container"></div>
                 <div class="form-and-buttons">
-                    <form id="poll-form">
+                    <form class="poll-form" id="poll-form">
                         <label>
                             Question
                             <input name="booger-question" />
@@ -32,20 +34,15 @@
                             Option B
                             <input name="booger-option-b" />
                         </label>
-
                         <button>Start Poll</button>
                     </form>
 
                     <div class="buttons">
-                        <!-- <h2>Current Poll</h2> -->
-                        <div id="current-poll-container">
-                            
-                        </div>
                         <div class="top-buttons">
                             <!-- <h3 id="poll-question">Poll Question</h3> -->
                             <div class="left-buttons">
-                                <!-- <h3 id="option-a-title">Option A</h3>
-                                <h3 id="option-a-votes"></h3> -->
+                                <h3 id="option-a-title"></h3>
+                                <!-- <h3 id="option-a-votes"></h3> -->
                                 <button id="option-a-add-button">
                                     Add
                                 </button>
@@ -54,8 +51,8 @@
                                 </button>
                             </div>
                             <div class="right-buttons">
-                                <!-- <h3 id="option-b-title">Option B</h3>
-                                <h3 id="option-b-votes"></h3> -->
+                                <h3 id="option-b-title"></h3>
+                                <!-- <h3 id="option-b-votes"></h3> -->
                                 <button id="option-b-add-button">
                                     Add
                                 </button>
@@ -64,7 +61,6 @@
                                 </button>
                             </div>
                         </div>
-                        <hr>
                         <div class="bottom-buttons">
                             <button id="close-poll-button">
                                 Close Poll
@@ -72,14 +68,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="right">
-                    <div>
-                        <h2>Past Polls</h2>
-                    </div>
-                    <div id="past-polls-container">
-                        
-                    </div>
+            </div>
+            <div class="right">
+                <div>
+                    <h2>Past Polls</h2>
                 </div>
+                <div id="past-polls-container"></div>
+            </div>
 
         </section>
     </main>

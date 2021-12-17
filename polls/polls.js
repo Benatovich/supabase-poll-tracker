@@ -103,8 +103,8 @@ window.addEventListener('load', async() => {
 function displayCurrentPollEl() {
     currentPollEl.textContent = '';
     // questionEl.textContent = currentPoll.question;
-    // optionATitleEl.textContent = currentPoll.optionATitle;
-    // optionBTitleEl.textContent = currentPoll.optionBTitle;
+    optionATitleEl.textContent = currentPoll.optionATitle;
+    optionBTitleEl.textContent = currentPoll.optionBTitle;
     // optionAVotesEl.textContent = currentPoll.optionAVotes;
     // optionBVotesEl.textContent = currentPoll.optionBVotes;
 
