@@ -125,5 +125,5 @@ async function displayAllPolls() {
     }
 }
 
-// displayAllPolls();
+displayAllPolls();
 // displayCurrentPollEl();

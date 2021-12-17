@@ -1,7 +1,10 @@
-let optionATitle = '';
-let optionBTitle = '';
-let optionAVotes = 0;
-let optionBVotes = 0;
+let currentPoll = {
+    question: '',
+    optionATitle: '',
+    optionBTitle: '',
+    optionAVotes: 0,
+    optionBVotes: 0,
+};
 
 export function renderOption(title, votes) {
     const container = document.createElement('div');
