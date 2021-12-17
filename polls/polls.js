@@ -120,10 +120,10 @@ function displayCurrentPollEl() {
     optionAVotesEl.textContent = currentPoll.optionAVotes;
     optionBVotesEl.textContent = currentPoll.optionBVotes;
 
-    const pollEl = renderPoll(currentPoll);
-    pollEl.classList.add('current');
+    // const pollEl = renderPoll(currentPoll);
+    // pollEl.classList.add('current');
 
-    currentPollEl.append(pollEl);
+    // currentPollEl.append(pollEl);
 }
 
 async function displayAllPolls() {
@@ -137,5 +137,5 @@ async function displayAllPolls() {
     }
 }
 
-displayAllPolls();
-displayCurrentPollEl();
+// displayAllPolls();
+// displayCurrentPollEl();
